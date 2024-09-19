@@ -1,10 +1,12 @@
 # Trip-Analysis-toolkits
 
 ### Table of contents
-[Requirement Software](requirement-software)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running Program](#running-program)
+- [Indicator Results](#indicator-results)
 
-
-### Requirement Software
+### Prerequisites
 - Hadoop cluster with Hive installed (Hortonwork Data Platform (HDP) 3.1.4)
 - Hive 3.1.0
 - Spark 2.3.2
@@ -22,7 +24,7 @@
     ```
 
 ### Running Program
-1. Create a Hive database for storing the table
+1. Create a Hive database for use in the creation of tables in the next process steps.
 2. Initialize tables by running through ```1_initialize_project.ipynb``` notebook.
 
     ***Requirement parameters***
@@ -88,4 +90,19 @@
     ```
     - using ```generate_speed_acc()``` function to generate the speed and accerelation information into the ```speed_acc_table```.
 
-### Indicator Result
+7. After finished the analysis processing steps, the results can be visualized by using ```6_visualize_stat.ipynb```. The visualizations consist of travel patterns, accessibility, speed & safety, and stopping hot spot
+
+### Indicator Results
+1. Travel pattern
+  - **Total trips** reflect daily mobility demands.
+  - **Trip length** shows how far a taxi is usually used to search for a customer.
+  - **Travel time** shows the duration a passenger spends in a taxi.
+  - **Origin Destination** represents the heatmap of density from Origin(pickup) to Destination(drop off) regions in the specific province.
+2. Accessibility
+  - **Service available map** displays the high density of pickup and drop-off zones on the map. 
+3. Speed and Safety
+  - **Distribution of speed on vacant and busy trips** shows distribution of speed using in both busy and vacant period.
+  - **Speeding area** displays a scatter plot of speed range in the specific area on the map.
+4. Stopping period characteristics
+  - **Stoppinp hourly volume** shows the amount of taxis each time period.
+  - **Stopping hot spot** displays the high density of stopping zones of each cluster period.

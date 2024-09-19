@@ -47,7 +47,7 @@
     folder_path         : location path to save downloaded probe taxi files 
     ```
     - using ```get_data()``` function to download the raw probe data file from the url ```https://itic.longdo.com/opendata/probe-data/PROBE-{month}.tar.bz2```
-    - using ```extract_file()``` function to extract the data to a folder.
+    - using ```extract_file()``` function to extract the probe taxi compressed file into a folder.
 
 4. Generate the trip information using ```3_create_trip.ipynb```
 

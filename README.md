@@ -95,23 +95,32 @@
 ### Indicator Results
 1. Travel pattern
   - **Total trips** reflect daily mobility demands.
+    
     <img src="./example_result/total_trip.png" width="80%">
   - **Trip length** shows how far a taxi is usually used to search for a customer.
+
     <img src="./example_result/distance_distribution.png" width="80%">
   - **Travel time** shows the duration a passenger spends in a taxi.
+    
     <img src="./example_result/duration_distribution.png" width="80%">
   - **Origin Destination** represents the heatmap of density from Origin(pickup) to Destination(drop off) regions in the specific province.
+    
     <img src="./example_result/od_heatmap.png" width="80%">
 2. Accessibility
   - **Service available map** displays the high density of pickup and drop-off zones on the map.
+    
     <img src="./example_result/od_density_6-7.png" width="80%">
 3. Speed and Safety
   - **Distribution of speed on vacant and busy trips** shows distribution of speed using in both busy and vacant period.
+    
     <img src="./example_result/speed_distribution.png" width="80%">
   - **Speeding area** displays a scatter plot of speed range in the specific area on the map.
+    
     <img src="./example_result/speeding_area.png" width="80%">
 4. Stopping period characteristics
   - **Stoppinp hourly volume** shows the amount of taxis each time period.
+    
     <img src="./example_result/stay_hourly_volume.png" width="80%">
   - **Stopping hot spot** displays the high density of stopping zones of each cluster period.
+    
     <img src="./example_result/stay_spot_0-1am.png" width="80%">

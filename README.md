@@ -7,10 +7,12 @@
 - [Indicator Results](#indicator-results)
 
 ### Prerequisites
+This tookits was developed on HDP 3.1.4 
 - Hadoop cluster with Hive installed (Hortonwork Data Platform (HDP) 3.1.4)
 - Hive 3.1.0
 - Spark 2.3.2
 - Python 2.7.5
+- Jupyter Hub
 
 ### Installation
 - Setup the environment according to the requirement software section
@@ -48,8 +50,23 @@
     ```
     - using ```get_data()``` function to download the raw probe data file from the url ```https://itic.longdo.com/opendata/probe-data/PROBE-{month}.tar.bz2```
     - using ```extract_file()``` function to extract the probe taxi compressed file into a folder.
+    - using ```insert_data()``` function to insert the probe taxi data from ```csv``` file into the probe table.
 
-4. Generate the trip information using ```3_create_trip.ipynb```
+   In case the data is not downloaded from the function ```get_data()``` and ```extract_file()```, the table format of ```csv``` file should be as follows:
+
+| Feature | Description | Example |  
+| :---: | --- | --- |
+| Vehicle ID | Unique vehicle ID | 7LO1lqJvO7t0Scmfc... |
+| GPS Valid | 1 = enough satellite for GPS fix | 1 |
+| lat | GPS latitude up to 5 decimal places | 14.51006 |
+| lon | GPS longitude up to 5 decimal places | 101.3771 |
+| timestamp | GPS timestamp ( GMT+7 ) | 2023-01-28 12:38:14
+| speed | km/h | 0 |
+| heading | vehicle heading direction [0-360) degree from North=0 | 86 |
+| for_hire_light | "For Hire" light is ON 1 = light on  => possibly no passenger 0 = light off => possibly carrying passengers | 0 |
+| engine_acc | car key status active, can be: 1 (active, the data will be collected every minutes) or 0 (inactive, data collected every 3 minutes) | 1 |
+
+5. Generate the trip information using ```3_create_trip.ipynb```
 
     ***Requirement parameters***
     ```
@@ -66,7 +83,7 @@
     ```
     - using ```generate_trip()``` function to generate the trip information into the ```trip_table```.
 
-5. Generate the Origin-Destination information using ```4_origin_destination.ipynb```
+6. Generate the Origin-Destination information using ```4_origin_destination.ipynb```
 
     ***Requirement parameters***
     ```
@@ -78,7 +95,7 @@
     ```
     - using ```generate_od()``` function to generate the Origin-Destination information into the ```od_table```.
 
-6. Generate the Speed and Acceleration information using ```5_speed_acc.ipynb```
+7. Generate the Speed and Acceleration information using ```5_speed_acc.ipynb```
 
     ***Requirement parameters***
     ```
@@ -90,7 +107,7 @@
     ```
     - using ```generate_speed_acc()``` function to generate the speed and accerelation information into the ```speed_acc_table```.
 
-7. After finished the analysis processing steps, the results can be visualized by using ```6_visualize_stat.ipynb```. The visualizations consist of travel patterns, accessibility, speed & safety, and stopping hot spot
+8. After finished the analysis processing steps, the results can be visualized by using ```6_visualize_stat.ipynb```. The visualizations consist of travel patterns, accessibility, speed & safety, and stopping hot spot
 
 ### Indicator Results
 1. Travel pattern
